@@ -1,0 +1,13 @@
+# Methodology
+
+The source is the user's existing VDIV Berlin-Brandenburg extraction in Google Sheets. All five tabs were read using the connected Google Drive plugin and saved locally. No changes were made to the sheet. The repository independently imports the RAW_DIRECTORY tab; counts are measured, not forced to the stated baseline.
+
+Company websites are taken from directory URLs. A successful fetch establishes accessibility, not independent proof of current legal ownership. The crawler reads robots.txt, uses a named user agent, respects crawl-delay, follows bounded redirects, and fetches the homepage plus at most two same-host links with service/company/contact terms. No LinkedIn crawling, paid search API or email guessing is used. JS-only and blocked pages remain unknown.
+
+Rule extraction recognizes explicit service phrases. Every accepted field retains a contextual source quote, page URL, retrieval timestamp and content hash. Managed units require an explicit phrase such as “wir verwalten 1.000 Wohneinheiten.” A mention can still describe editorial content or third parties, so automated signals require review. No absence-of-keyword negative labels are generated. Directory people remain unverified contacts and earn no decision-maker points.
+
+Business fit is an observed lower bound. Residential/WEG/rental services earn 30; published units earn 0/5/10/18/25 for 0/1–99/100–499/500–999/1000+; explicit billing earns 25; published multiple-building management earns 10; an explicit customer/owner/tenant portal earns 10. Unknown criteria contribute no observed points but retain their weight in the upper bound. Completeness is the sum of criterion weights supported by evidence. A positive service signal and Berlin office or explicit Berlin coverage are required for ranked priority. Under 60% completeness remains Needs Research; otherwise 70+ is High, 40+ Medium, below 40 Low. Explicit non-Berlin coverage may support Excluded. Confidence is capped at Medium because automatic extraction is not independently verified.
+
+Contact readiness is separate: 40 verified professional email, 40 evidenced relevant role, 20 evidenced LinkedIn profile. Current directory-only contacts do not qualify for these points. Publicly listed email does not prove deliverability or outreach consent.
+
+Snapshot mode performs no network requests and regenerates facts from saved text. Live results vary with source availability. Source snapshots and model outputs must be archived with config and prompt versions for reproducibility. QA covers synthetic edge cases, source-backed sample review and saved-workbook readback. Neither directory completeness nor extraction accuracy is assumed to be 100%.

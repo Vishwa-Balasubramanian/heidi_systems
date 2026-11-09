@@ -1,0 +1,7 @@
+.sites-local/
+.openai/*.local.json
+node_modules/
+.vercel/
+*.tar.gz
+
+.vercel

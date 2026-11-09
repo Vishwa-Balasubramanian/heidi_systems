@@ -1,0 +1,21 @@
+version: scoring-v1
+city: Berlin
+input: data/raw/RAW_DIRECTORY.json
+cache: data/raw/pages
+output: outputs/heidi_berlin
+request_timeout: 12
+request_delay: 1.0
+max_pages: 3
+workers: 8
+weights:
+  services: 30
+  portfolio: 25
+  billing: 25
+  coverage: 10
+  digital: 10
+portfolio_bands: [[1000, 25], [500, 18], [100, 10], [1, 5], [0, 0]]
+min_completeness: 60
+high_threshold: 70
+medium_threshold: 40
+sources:
+  Berlin: https://vdiv-bb.de/mitglieder/
