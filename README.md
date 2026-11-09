@@ -2,7 +2,11 @@
 
 Research and rank potential customers for Heidi's metering and billing services using public directory listings, saved company websites, optional OpenAI extraction and explainable scoring.
 
-**Website:** https://heidi-berlin-lead-intelligence.vercel.app
+## Live website
+
+**[Open Heidi Lead Intelligence](https://heidi-berlin-lead-intelligence.vercel.app/)**
+
+Explore all 292 Berlin companies, the 35 priority leads, company contacts and evidence, and download the final Excel workbook. No local installation is needed to use the website.
 
 ## Start here
 
@@ -77,7 +81,7 @@ node website/heidi-leads/test.mjs
 
 The current Python suite has 49 tests. Workbook checks compare all 292 companies, priorities, scores, units, contacts and links against validated data.
 
-### Open the website locally
+### Optional: run a local development preview
 
 ```powershell
 .\.venv\Scripts\python -m http.server 8765 --directory website/heidi-leads/dist

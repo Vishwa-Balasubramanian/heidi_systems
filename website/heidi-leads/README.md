@@ -1,12 +1,14 @@
 # Heidi Lead Intelligence website
 
+**[Open the live website](https://heidi-berlin-lead-intelligence.vercel.app/)** — use this link to view the results without running a local server.
+
 Priority Leads is the default page. The static application includes all 292 companies, search, service/status filters, sorting, pagination, source evidence details, research overview, scoring methodology and workbook/report downloads.
 
 No AI calls, database, package installation or build step is needed to browse it. Private Sites hosting is configured in `.openai/hosting.json`.
 
 Vercel production: https://heidi-berlin-lead-intelligence.vercel.app . Static output is configured in `vercel.json`; `.vercelignore` excludes Sites metadata and development files. To publish subsequent changes from this directory, run `npx vercel@65.12.1 deploy --prod --yes` with the existing Vercel account login.
 
-Refresh the presentation data from the repository root:
+For development only, refresh the presentation data and start a local preview from the repository root:
 ```powershell
 .\.venv\Scripts\python tools/export_website.py
 node website/heidi-leads/test.mjs
